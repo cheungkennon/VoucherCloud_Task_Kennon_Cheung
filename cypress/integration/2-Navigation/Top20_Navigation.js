@@ -4,7 +4,7 @@ describe('VoucherCodes Top20 Navigation', () => {
     beforeEach(() => {
       // Given the user has accessed the Vouchercodes homepage
       cy.visit('https://www.vouchercodes.co.uk/')
-      cy.contains('Top 20').as('navigator')
+      cy.get('[data-ga-action="Top20"]').as('navigator')
     })
   
     it('Navigation from HomePage', () => {
