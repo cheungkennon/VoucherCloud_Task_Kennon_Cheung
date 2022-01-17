@@ -8,11 +8,9 @@ describe('VoucherCodes Top20 Navigation', () => {
     })
   
     it('Navigation from HomePage', () => {
-      //navigate from homepage to top 20 page (will fail due to syntax on selector)
+      //navigate from homepage to top 20 page (will fail due invalid text assert (possibly caused bychange in text))
       cy.get('@navigator').click()
       cy.url().should('include','/featured-voucher-codes.html')
-      cy.get('[data-qa=e l]').click()
-    })
-  
-  })
-  
+      cy.get('[data-qa="el:heading cat:Top 20 Voucher Codes"]').should('have.text', '\n   Top 20 Voucher Codes\n  ')
+    })  
+  })  

@@ -4,8 +4,9 @@ describe('VoucherCodes restaurant search functionality', () => {
   beforeEach(() => {
     // Given the user has accessed the Vouchercodes restaurant page
     cy.visit('https://www.vouchercodes.co.uk/restaurant-vouchers.html')
-    cy.get('#google-autocomplete').as('location')
-    cy.contains('Find restaurants vouchers').as('search')
+    cy.get('#google-autocomplete')
+    cy.get('[data-qa="el:locationDropdown enabled:true"]').as('location')
+    cy.get('[data-qa="el:findRestaurantsVoucherButton"]').as('search')
   })
 
   it('London Restaurant Search', () => {
